@@ -20,6 +20,10 @@ A development server is now running. It is possible to preview the API response 
 curl http://localhost:8080/total
 ```
 
+# Software Dependencies
+
+This solution makes use of `bottle.py`, a minimalistic web framework to serve the API response. This framework is not as feature rich as others, but it _serves_ just fine for a smaller project.
+
 # Original Problem Description
 
 ## Software Engineer Python Test
