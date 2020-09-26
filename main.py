@@ -32,6 +32,8 @@ def total():
         }
     except:
         status_code = 500
+        # Because no failure outcomes are defined, there is no need to be
+        # more specific in the status code other than success/unexpected failure.
         answer = {
             'error': 'An unexpected error occured while preparing the reponse.'
         }
