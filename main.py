@@ -2,7 +2,7 @@
 
 import json
 import functools
-from bottle import route, run
+from bottle import route, run, response
 from backend import numbers_to_add
 
 # The sum of a list of numbers is an unchanging (deterministic)
@@ -18,9 +18,19 @@ def memoized_summation():
 
 @route('/total')
 def total():
-    return json.dumps({
-        'total': memoized_summation()
-    })
+    status_code = 200
+    try:
+        answer = {
+            'total': memoized_summation()
+        }
+    except:
+        status_code = 500
+        answer = {
+            'error': 'An unexpected error occured while preparing the reponse.'
+        }
+    response.status = status_code
+    response.set_header('Content-Type', 'application/json')
+    return json.dumps(answer)
 
 if __name__ == '__main__':
     run(host='localhost', port=8080)
