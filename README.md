@@ -38,6 +38,8 @@ python3 -m venv venv
 pytest
 ```
 
+This command would be very comfortable inside the testing stage of a CI pipeline.
+
 # Software Dependencies
 
 This solution makes use of `bottle.py`, a minimalistic web framework to serve the API response. This framework is not as feature rich as others, but it _serves_ just fine for a smaller project. The documentation is available at http://bottlepy.org/docs/0.12/.
