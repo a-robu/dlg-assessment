@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import logging
 import json
 import functools
 from bottle import route, run, response
@@ -30,7 +31,10 @@ def total():
         answer = {
             'total': memoized_summation()
         }
-    except:
+    except Exception as e:
+        # The error catch-all above prevents exceptions from appearing in logs.
+        # So, we log the error explicitly.
+        logging.error(e, exc_info=True)
         status_code = 500
         # Because no failure outcomes are defined, there is no need to be
         # more specific in the status code other than success/unexpected failure.
