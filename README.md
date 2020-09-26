@@ -1,7 +1,24 @@
 
 # Introduction
 
-This repository holds Andrei's solution to DLG's software engineer assessment. The original problem description is available below, in the following section.
+This repository holds Andrei's solution to DLG's software engineer assessment. The original problem description is available [further below](#original-problem-description).
+
+# Running from Source
+
+To serve the API endpoint from source, run the following commands to setup a _venv_ and run in source-reloading mode.
+
+```bash
+python3 -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
+python -m bottle main --reload
+```
+
+A development server is now running. It is possible to preview the API response in a web browser at http://localhost:8080/total or by running the following command.
+
+```bash
+curl http://localhost:8080/total
+```
 
 # Original Problem Description
 
