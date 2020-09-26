@@ -3,15 +3,23 @@
 
 This repository holds Andrei's solution to DLG's software engineer assessment. The original problem description is available [further below](#original-problem-description).
 
-# Running from Source
+# Setting Up
 
-To serve the API endpoint from source, run the following commands to setup a _venv_ and run in source-reloading mode.
+Run the following commands to setup a _venv_ and install the dependencies.
 
 ```bash
 python3 -m venv venv
 . venv/bin/activate
 pip install wheel
 pip install -r requirements.txt -r requirements-dev.txt
+```
+
+# Running from Source
+
+Run the following commands to serve the API endpoint from source in source-reloading mode.
+
+```bash
+. venv/bin/activate
 python -m bottle main --reload
 ```
 
