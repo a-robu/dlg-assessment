@@ -10,7 +10,7 @@ To serve the API endpoint from source, run the following commands to setup a _ve
 ```bash
 python3 -m venv venv
 . venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt -r requirements-dev.txt
 python -m bottle main --reload
 ```
 
@@ -18,6 +18,15 @@ A development server is now running. It is possible to preview the API response 
 
 ```bash
 curl http://localhost:8080/total
+```
+
+# Running the Tests
+
+This project does not have many unit tests (because there is not much complex logic to test). Still, some assumptions are validated in automated tests. Enter the virtual environment and run _pytest_ to run the tests.
+
+```bash
+python3 -m venv venv
+pytest
 ```
 
 # Software Dependencies
