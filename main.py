@@ -9,6 +9,8 @@ from backend import numbers_to_add
 def sum_numbers_to_add(numbers=numbers_to_add):
     return sum(numbers)
 
+# We create a separate memoized function so that we can verify that
+# we are applying the caching mechanism correctly (in the automated test).
 @functools.lru_cache(maxsize=None)
 def memoized_summation():
     ''' Computes the total amount (which is the core of the API response).
