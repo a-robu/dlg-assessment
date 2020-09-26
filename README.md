@@ -33,6 +33,8 @@ pytest
 
 This solution makes use of `bottle.py`, a minimalistic web framework to serve the API response. This framework is not as feature rich as others, but it _serves_ just fine for a smaller project. The documentation is available at http://bottlepy.org/docs/0.12/.
 
+I chose to use the _Pytest_ testing framework because I like [the simplicity of assertions in pytest](https://docs.pytest.org/en/stable/assert.html).
+
 # Original Problem Description
 
 ## Software Engineer Python Test
