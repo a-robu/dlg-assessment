@@ -1,11 +1,11 @@
 
 # Introduction
 
-This repository holds Andrei's solution to DLG's software engineer assessment. The original problem description is available [further below](#original-problem-description).
+This repository holds Andrei's solution to DLG's software engineer assessment. A copy of the original problem description is included [further below at the end of this README](#original-problem-description).
 
 # Setting Up
 
-Run the following commands to setup a _venv_ and install the dependencies.
+Run the following commands to setup a _venv_ with the necessary dependencies.
 
 ```bash
 python3 -m venv venv
@@ -16,7 +16,7 @@ pip install -r requirements.txt -r requirements-dev.txt
 
 # Running from Source
 
-Run the following commands to serve the API endpoint from source in source-reloading mode.
+Run the following commands to enter the _venv_ and use _Bottle_ to serve the API endpoint in source-reloading mode.
 
 ```bash
 . venv/bin/activate
@@ -38,25 +38,27 @@ python3 -m venv venv
 pytest
 ```
 
-This command would be very comfortable inside the testing stage of a CI pipeline.
+Note that this command would be very comfortable inside the testing stage of a CI pipeline.
 
 # Software Dependencies
 
-This solution makes use of _Bottle_, a minimalistic web framework to serve the API response. This framework is not as feature rich as others, but it _serves_ just fine for a smaller project. The documentation is available at http://bottlepy.org/docs/0.12/.
+This solution uses _Bottle_, a minimalistic web framework, to serve the API response. Bottle is not as feature rich as other frameworks, but it can serve a smaller project just fine. The documentation is available at http://bottlepy.org/docs/0.12/.
 
 I chose to use the _Pytest_ testing framework because I like [the simplicity of assertions in pytest](https://docs.pytest.org/en/stable/assert.html).
 
-The _Bottle_ response is verified using _Boddle_ (a small dependency which provides a context for verifying _Bottle_ responses). I chose _Boddle_ just because [this comment recommented it](https://stackoverflow.com/a/41270185) and because the source code seemed ok (not dangerous).
+The automated tests use _Boddle_ to verify teh _Bottle_ responses. I chose _Boddle_ because [this comment recommented it](https://stackoverflow.com/a/41270185) and because the source code of this small library does not seem malicious on first glance.
 
 # Assumptions & Limitations
 
-This solution is a toy example of how a software project can work. Typically I find that my dependencies can become a bit more complex (such as needing software that can be conveniently installed with a distro's package manager) and I tend to then Docker-ize my projects. Here, that is not necessary as the dependencies are very simple and the software is still easy to run.
+This solution is a toy example of how a software project can work.
 
-For very large datasets, it may be necessary to distribute the summation operaton across multiple workers. This solution is not implemented in this project.
+Typically I find that in most projects, the management of dependencies can become more complex (such as when needing software that can be conveniently installed with a distro's package manager) and so, in time, I tend to containerize projects as they grow. Here, it was not necessary to containerize the code because dependencies are very simple and the software is still easy to run.
+
+For very large datasets, it may be necessary to distribute the summation operaton across multiple workers. This distribuited computation is not implemented in this project.
 
 APIs often need to rate-limit clients, to ensure unintrerupted service. One reason why I have not implemented rate limiting in this solution is that, with caching, this API does not require a large amount of compute time to serve its response.
 
-No way to execute the code in production is provided, although it would be trivial to, for example, [run this on Google AppEngine](https://github.com/GoogleCloudPlatform/appengine-bottle-skeleton/blob/master/app.yaml).
+No way to execute the code in production is provided, although it would be trivial to, for example, [run this on Google AppEngine](https://github.com/GoogleCloudPlatform/appengine-bottle-skeleton).
 
 # Original Problem Description
 
@@ -84,4 +86,4 @@ Response:
 
 Please provide the source code, tests, documentationsand any assumptionsyou have made.
 
-Note: We are looking for the candidate’s “Software Engineering”ability not just the Python programming skills.
+Note: We are looking for the candidate’s “Software Engineering” ability not just the Python programming skills.
