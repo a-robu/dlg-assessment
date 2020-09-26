@@ -44,6 +44,8 @@ This solution makes use of `bottle.py`, a minimalistic web framework to serve th
 
 I chose to use the _Pytest_ testing framework because I like [the simplicity of assertions in pytest](https://docs.pytest.org/en/stable/assert.html).
 
+The _Bottle_ response is verified using _Boddle_ (a small dependency which provides a context for verifying _Bottle_ responses). I chose _Boddle_ just because [this comment recommented it](https://stackoverflow.com/a/41270185) and because the source code seemed ok (not dangerous).
+
 # Assumptions & Limitations
 
 This solution is a toy example of how a software project can work. Typically I find that my dependencies can become a bit more complex (such as needing software that can be conveniently installed with a distro's package manager) and I tend to then Docker-ize my projects. Here, that is not necessary as the dependencies are very simple and the software is still easy to run.
