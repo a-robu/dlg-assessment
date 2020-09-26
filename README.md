@@ -22,7 +22,7 @@ curl http://localhost:8080/total
 
 # Software Dependencies
 
-This solution makes use of `bottle.py`, a minimalistic web framework to serve the API response. This framework is not as feature rich as others, but it _serves_ just fine for a smaller project.
+This solution makes use of `bottle.py`, a minimalistic web framework to serve the API response. This framework is not as feature rich as others, but it _serves_ just fine for a smaller project. The documentation is available at http://bottlepy.org/docs/0.12/
 
 # Original Problem Description
 
