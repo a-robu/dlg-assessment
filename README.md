@@ -35,6 +35,12 @@ This solution makes use of `bottle.py`, a minimalistic web framework to serve th
 
 I chose to use the _Pytest_ testing framework because I like [the simplicity of assertions in pytest](https://docs.pytest.org/en/stable/assert.html).
 
+# Assumptions & Limitations
+
+This solution is a toy example of how a software project can work. Typically I find that my dependencies can become a bit more complex (such as needing software that can be conveniently installed with a distro's package manager) and I tend to then Docker-ize my projects. Here, that is not necessary as the dependencies are very simple and the software is still easy to run.
+
+No way to execute the code in production is provided, although it would be trivial to, for example, [run this on Google AppEngine](https://github.com/GoogleCloudPlatform/appengine-bottle-skeleton/blob/master/app.yaml).
+
 # Original Problem Description
 
 ## Software Engineer Python Test
