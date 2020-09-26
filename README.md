@@ -48,6 +48,8 @@ I chose to use the _Pytest_ testing framework because I like [the simplicity of 
 
 This solution is a toy example of how a software project can work. Typically I find that my dependencies can become a bit more complex (such as needing software that can be conveniently installed with a distro's package manager) and I tend to then Docker-ize my projects. Here, that is not necessary as the dependencies are very simple and the software is still easy to run.
 
+For very large datasets, it may be necessary to distribute the summation operaton across multiple workers. This solution is not implemented in this project.
+
 APIs often need to rate-limit clients, to ensure unintrerupted service. One reason why I have not implemented rate limiting in this solution is that, with caching, this API does not require a large amount of compute time to serve its response.
 
 No way to execute the code in production is provided, although it would be trivial to, for example, [run this on Google AppEngine](https://github.com/GoogleCloudPlatform/appengine-bottle-skeleton/blob/master/app.yaml).
