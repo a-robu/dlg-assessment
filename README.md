@@ -10,6 +10,7 @@ To serve the API endpoint from source, run the following commands to setup a _ve
 ```bash
 python3 -m venv venv
 . venv/bin/activate
+pip install wheel
 pip install -r requirements.txt -r requirements-dev.txt
 python -m bottle main --reload
 ```
